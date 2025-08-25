@@ -23,7 +23,7 @@ const (
 
 type GetBookRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	BookId        string                 `protobuf:"bytes,1,opt,name=book_id,json=bookId,proto3" json:"book_id,omitempty"`
+	BookId        int64                  `protobuf:"varint,1,opt,name=book_id,json=bookId,proto3" json:"book_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -58,11 +58,11 @@ func (*GetBookRequest) Descriptor() ([]byte, []int) {
 	return file_sso_library_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *GetBookRequest) GetBookId() string {
+func (x *GetBookRequest) GetBookId() int64 {
 	if x != nil {
 		return x.BookId
 	}
-	return ""
+	return 0
 }
 
 type GetBookResponse struct {
@@ -531,7 +531,7 @@ const file_sso_library_proto_rawDesc = "" +
 	"\n" +
 	"\x11sso/library.proto\x12\alibrary\")\n" +
 	"\x0eGetBookRequest\x12\x17\n" +
-	"\abook_id\x18\x01 \x01(\tR\x06bookId\"\x95\x01\n" +
+	"\abook_id\x18\x01 \x01(\x03R\x06bookId\"\x95\x01\n" +
 	"\x0fGetBookResponse\x12\x17\n" +
 	"\abook_id\x18\x01 \x01(\tR\x06bookId\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
